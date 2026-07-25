@@ -1,5 +1,24 @@
 # Li-ion-dataset
 在网上找到的各种锂离子数据
+# LFP 
+
+| Dataset | Task | Paper | Code |
+| --- | --- | --- | --- |
+| [Lithium-Ion Battery Field Data: 28 LFP battery systems with 8 cells in series, up to 5 years of operation （LFP）](https://zenodo.org/records/13715694) | Lithium-Ion Battery Field Data: 28 LFP battery systems with 8 cells in series, up to 5 years of operation | [Gaussian Process-based Online Health Monitoring and Fault Analysis of Lithium-Ion Battery Systems from Field Data Cell Report Physical Science](https://doi.org/10.1016/j.xcrp.2024.102258) | [[Github 1]](https://github.com/JoachimSchaeffer/BattGP) |
+| [MATR(LFP)](https://data.matr.io/1/projects/5c48dd2bc625d700019f3204) | consists of 124 commercial lithium-ion batteries cycled to failure under fast-charging conditions | [Data-driven prediction of battery cycle life before capacity degradation](https://www.nature.com/articles/s41560-019-0356-8) | [[Github 4]](https://github.com/rdbraatz/data-driven-prediction-of-battery-cycle-life-before-capacity-degradation) |
+| [The Dataset for: Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning(LFP)](https://data.mendeley.com/datasets/nsc7hnsg4s/2) | A dataset with 77 LFP/graphite cells (1.1 Ah nominal capacity and 3.3 V nominal voltage). The cells were cycled with an identical charge protocol but different multi-stage discharge protocols at a constant temperature of 30°C. | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/ee/article/15/10/4083/767199/Real-time-personalized-health-status-prediction-of) | [[Github 17]](https://doi.org/10.5281/zenodo.6827566) |
+
+# NCA
+| Dataset | Task | Paper | Code |
+| --- | --- | --- | --- |
+| [Panasonic 18650PF Li-ion Battery Data(NCA)](https://data.mendeley.com/datasets/wykht8y7tg/1) | The included tests were performed at the University of Wisconsin-Madison by Dr. Phillip Kollmeyer.If this data is utilized for any purpose, it should be appropriately referenced.The tests can be used to test Neural Network and Kalman Filter State of Charge algorithms, or to develop battery models, and are intended to be a reference so researchers can compare their algorithm and model performance for a standard data set.d | [Intrinsic Variability in the Degradation of a Batch of Commercial 18650 Lithium-Ion Cells](https://www.mdpi.com/1996-1073/11/5/1031) | [[Github 20]](https://github.com/infinityengi/li-ion-battery-datasets) |
+
+# LCO 
+
+| Dataset | Task | Paper | Code |
+| --- | --- | --- | --- |
+| [NASA Randomized Battery Usage(LCO)](https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip) | NASA Battery Data Set.A dataset of lithium-ion battery experiments, including charging and discharging at different temperatures | [A framework for Li-ion battery prognosis based on hybrid Bayesian physics-informed neural networks](https://www.nature.com/articles/s41598-023-33018-0#data-availability) | [[Github 12]](https://github.com/nasa/Li-ion-Battery-Prognosis-Based-on-Hybrid-Bayesian-PINN) |
+
 # NMC 
 
 | Dataset | Task | Paper | Code |
@@ -28,4 +47,4 @@
 | --- | --- | --- | --- |
 | []() | RAGflow frame | []() | [[Github 9]](https://github.com/infiniflow/ragflow) |
 | [Dataset_SECL_INR21700-M50T(406辆真实运行的电动汽车电池）)](https://data.mendeley.com/datasets/mcsh4hnb8b/1) | Three real-world large-scale electric vehicle datasets from 464 EVs of 3 types, including over 1.2 million charging snippets. | []() | []() |
-| [Synthetic Duty Cycles from Real-World Autonomous Electric Vehicle Driving: Accompanying Data（模拟电动网联自动驾驶汽车31个电芯测试数据）](https://doi.org/10.25740/ky011nj6376) | Collected from 20 EVs over approximately 29 months, the dataset includes charging data, labeled capacity values derived from statistical methods, and features optimized through data-driven algorithms. | [ Battery Capacity Prognostics Dataset for On-Road Electric Vehicles](https://doi.org/10.1016/j.xcrp.2023.101536) | [[Github 14]](https://github.com/shiyunliu-battery/battery-charging-data-of-on-road-electric-vehicles) |
+| [Synthetic Duty Cycles from Real-World Autonomous Electric Vehicle Driving: Accompanying Data（模拟电动网联自动驾驶汽车31个电芯测试数据）](https://doi.org/10.25740/ky011nj6376) | Collected from 20 EVs over approximately 29 months, the dataset includes charging data, labeled capacity values derived from statistical methods, and features optimized through data-driven algorithms. | [ Battery Capacity Prognostics Dataset for On-Road Electric Vehicles](https://doi.org/10.1016/j.xcrp.2023.101536) | [[Github 14]](https://github.com/shiyunliu-battery/battery-charging-data-of-on-road-electric-vehicles) |s://doi.org/10.1016/j.xcrp.2023.101536) | [[Github 14]](https://github.com/shiyunliu-battery/battery-charging-data-of-on-road-electric-vehicles) |
