@@ -130,8 +130,12 @@
 
 | Dataset | Dataset description | Task | Paper | Code |
 | --- | --- | --- | --- | --- |
-| []() | RAGflow frame || []() | [[Github 9]](https://github.com/infiniflow/ragflow) |
-| [Dataset_SECL_INR21700-M50T(406辆真实运行的电动汽车电池）)](https://data.mendeley.com/datasets/mcsh4hnb8b/1) | Three real-world large-scale electric vehicle datasets from 464 EVs of 3 types, including over 1.2 million charging snippets. |Real-world EV Battery Data Analysis| []() | []() |
+| [UNIBO Powertools Dataset](https://data.mendeley.com/datasets/n6xg5fzsbv/1) | Experimental lithium-ion battery dataset released by the University of Bologna (UNIBO). The dataset contains laboratory measurements collected from 27 batteries. | Battery Modeling | []() | []() |
+| [Oxford Battery Degradation Dataset](https://data.mendeley.com/datasets/bs2j56pn7y/1) | Cycle life prediction dataset for lithium-ion batteries released by the University of Oxford. The dataset is widely used for battery degradation analysis and state-of-health estimation. | Cycle Life Prediction, SOH Estimation | []() | []() |
+| [LG 18650HG2 Li-ion Battery Data](https://data.mendeley.com/datasets/cp3473x7xv/2) | Experimental dataset of LG 18650HG2 lithium-ion cells accompanied by an example deep neural network state-of-charge estimation script. | SOC Estimation | []() | []() |
+| [Real EV dataset](https://data.mendeley.com/datasets/j9ky68gnd3/1) | Real-world electric vehicle battery dataset collected from operating electric vehicles. | Real-world Battery Analysis | []() | []() |
+| []() | RAGflow frame | []() || [[Github 9]](https://github.com/infiniflow/ragflow) |
+ |[Dataset_SECL_INR21700-M50T(406辆真实运行的电动汽车电池）)](https://data.mendeley.com/datasets/mcsh4hnb8b/1) | Three real-world large-scale electric vehicle datasets from 464 EVs of 3 types, including over 1.2 million charging snippets. |Real-world EV Battery Data Analysis| []() | []() |
 | [Synthetic Duty Cycles from Real-World Autonomous Electric Vehicle Driving: Accompanying Data（模拟电动网联自动驾驶汽车31个电芯测试数据）](https://doi.org/10.25740/ky011nj6376) | Collected from 20 EVs over approximately 29 months, the dataset includes charging data, labeled capacity values derived from statistical methods, and features optimized through data-driven algorithms. |Battery Capacity Prognostics| [ Battery Capacity Prognostics Dataset for On-Road Electric Vehicles](https://doi.org/10.1016/j.xcrp.2023.101536) | [[Github 14]](https://github.com/shiyunliu-battery/battery-charging-data-of-on-road-electric-vehicles) |
 | [Aitio & Howey, 2021 (Pb-acid)](https://ora.ox.ac.uk/objects/uuid:e41d3d4c-f74e-4d76-81fd-0caa77ec6cec) | Real world use. Format: System; Batteries: 1027; Measurements: Real-world | Real world use | [Predicting battery end of life from solar off-grid system field data using machine learning](https://www.sciencedirect.com/science/article/pii/S2542435121005328) | []() |
 | [Beatty et al, 2025 (LMO/LNO-Gr)](https://repository.lboro.ac.uk/articles/online_resource/Long-Term_Sweat_Testing_Data_for_Second-Life_Batteries/28732490/2) | Cycle aging. Cell: Nissan Leaf; Format: Pouch; Batteries: 6 | Cycle aging | [Long-Term Sweat Testing Dataset for Second-Life Batteries](https://www.nature.com/articles/s41597-025-05360-7) | []() |
@@ -141,6 +145,7 @@
 | [Bosello et al, 2021 (n/a)](https://data.mendeley.com/datasets/n6xg5fzsbv/1) | cycle aging. Batteries: 27 | cycle aging | [Li-Ion Batteries State-of-Charge Estimation Using Deep LSTM at Various Battery Specifications and Discharge Cycles](https://dl.acm.org/doi/10.1145/3462203.3475878) | []() |
 | [Steinbuß et al, 2021 (n/a)](https://publikationen.bibliothek.kit.edu/1000094469) | BESS. Format: Pack; Batteries: 1 | BESS | [FOBSS](https://dl.acm.org/doi/10.1145/3307772.3331020) | []() |
 | [Pecht 2015 (n/a)](https://calce.umd.edu/battery-data#Storage) | Calendar aging. Batteries: 144; Measurements: Charge-discharge, EIS | Calendar aging | []() | []() |
+
 
 # 锂离子电池相关论文汇总
 
