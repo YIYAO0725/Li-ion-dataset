@@ -88,6 +88,11 @@
 | [Smith et al, 2017 (NMC-Gr)](https://batterydata.energy.gov/data-repo/dataset/71c72c7b-39e3-4748-90f0-2d631c0f1df8) | Cycle aging. Cell: Kokam; Format: Pouch; Batteries: 11 | Cycle aging | [Life prediction model for grid-connected Li-ion battery energy storage system](https://ieeexplore.ieee.org/abstract/document/7963578/) | []() |
 | [Tanim et al, 2021 (NMC532-Gr)](https://batterydata.energy.gov/data-repo/dataset/7c32de89-7d95-4812-9e04-f3770c91babe/detail) | Cycle aging, fast charging. Cell: Custom; Format: Pouch; Batteries: 34 | Cycle aging, fast charging | [Extended cycle life implications of fast charging for lithium-ion battery cathode](https://doi.org/10.1016/j.ensm.2021.07.001) | []() |
 
+# LMO（LiMn₂O₄锰酸锂）
+ Dataset | Dataset description | Task | Paper | Code |
+| --- | --- | --- | --- | --- |
+| [Beatty et al, 2025 (LMO/LNO-Gr)](https://repository.lboro.ac.uk/articles/online_resource/Long-Term_Sweat_Testing_Data_for_Second-Life_Batteries/28732490/2) | Cycle aging. Cell: Nissan Leaf; Format: Pouch; Batteries: 6 | Cycle aging | [Long-Term Sweat Testing Dataset for Second-Life Batteries](https://www.nature.com/articles/s41597-025-05360-7) | []() |
+
 # 复合数据
 
 | Dataset | Dataset description | Task | Paper | Code |
@@ -138,7 +143,6 @@
  |[Dataset_SECL_INR21700-M50T(406辆真实运行的电动汽车电池）)](https://data.mendeley.com/datasets/mcsh4hnb8b/1) | Three real-world large-scale electric vehicle datasets from 464 EVs of 3 types, including over 1.2 million charging snippets. |Real-world EV Battery Data Analysis| []() | []() |
 | [Synthetic Duty Cycles from Real-World Autonomous Electric Vehicle Driving: Accompanying Data（模拟电动网联自动驾驶汽车31个电芯测试数据）](https://doi.org/10.25740/ky011nj6376) | Collected from 20 EVs over approximately 29 months, the dataset includes charging data, labeled capacity values derived from statistical methods, and features optimized through data-driven algorithms. |Battery Capacity Prognostics| [ Battery Capacity Prognostics Dataset for On-Road Electric Vehicles](https://doi.org/10.1016/j.xcrp.2023.101536) | [[Github 14]](https://github.com/shiyunliu-battery/battery-charging-data-of-on-road-electric-vehicles) |
 | [Aitio & Howey, 2021 (Pb-acid)](https://ora.ox.ac.uk/objects/uuid:e41d3d4c-f74e-4d76-81fd-0caa77ec6cec) | Real world use. Format: System; Batteries: 1027; Measurements: Real-world | Real world use | [Predicting battery end of life from solar off-grid system field data using machine learning](https://www.sciencedirect.com/science/article/pii/S2542435121005328) | []() |
-| [Beatty et al, 2025 (LMO/LNO-Gr)](https://repository.lboro.ac.uk/articles/online_resource/Long-Term_Sweat_Testing_Data_for_Second-Life_Batteries/28732490/2) | Cycle aging. Cell: Nissan Leaf; Format: Pouch; Batteries: 6 | Cycle aging | [Long-Term Sweat Testing Dataset for Second-Life Batteries](https://www.nature.com/articles/s41597-025-05360-7) | []() |
 | [Rodríguez-Iturriaga et al, 2025 (SIB)](https://data.mendeley.com/datasets/j44rvwcpff/1) | BOL. Cell: Shenzhen Mushang Electronics NA18650-1250; Format: Cylindrical; Batteries: 2 | BOL | [Electrical characterization of a commercial sodium-ion cell with enhanced Ragone plot analysis compared to lithium-ion cells](https://www.sciencedirect.com/science/article/pii/S2950264025000358) | []() |
 | [Kollmeyer & Skells, 2020 (LiPoly)](https://data.mendeley.com/datasets/4fx8cjprxm/1) | BOL. Cell: Turnigy Graphene 5000mAh 65C; Batteries: 1 | BOL | []() | []() |
 | [Birkl & Howey, 2017 (n/a)](https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac) | Cycle aging. Cell: Kokam SLPB533459H4; Format: Pouch; Batteries: 8 | Cycle aging | []() | []() |
