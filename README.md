@@ -262,3 +262,34 @@ A full bilingual glossary for battery cycling, aging experiments, dataset classi
 | Dataset | Description | Task | Data Labeled or not | Paper | Code |
 | --- | --- | --- | --- | --- | --- |
 | []() | RAGflow frame | | | | [[Github 9]](https://github.com/infiniflow/ragflow) |
+
+
+# 锂离子电池相关论文汇总
+
+| Paper | Task | Journal | Authors | Date | Dataset/Github |
+| --- | --- | --- | --- | --- | --- |
+| [Agent-in-the-loop to distill expert knowledge into artificial intelligence models: a survey](https://link.springer.com/article/10.1007/s10462-025-11255-1) | 综述：将专家知识蒸馏到人工智能模型中的方法与路径 | *Artificial Intelligence Review* | Jiayuan Gao, Yingwei Zhang, Yiqiang Chen, et al. | 2025年 | --- |
+| [Li-Ion Battery Doctor: A Fine-Tuned and Explainable Large-Language Model for Health Prognosis](https://ieeexplore.ieee.org/document/11340691) | 微调且可解释的大语言模型，用于锂电池健康状态预测 | *IEEE Transactions on Energy Conversion* | Rudai Yan, Lingzhi Su, Yan Xu | 2026年1月12日 | https://www.batteryarchive.org/cycle_list.html?time=0001|
+| [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) | 基于时序感知检索增强框架（RAG）的 LLM，用于电动自行车锂电池诊断 | *Proceedings of the AAAI Conference on Artificial Intelligence (AAAI 2026)* | Shanshan Huang, Jing Jiang, Peng Cai, Qiwen Dong, Huiqi Hu, et al. | 2026年 | --- |
+| [Dual-Scale Nonstationary Representation for Degradation Tracking and Aging-Informed Monitoring of Lithium-Ion Battery System](https://ieeexplore.ieee.org/document/11368627) | 双尺度非平稳表示方法，用于退化跟踪与老化感知监测 | *IEEE Transactions on Industrial Electronics* | Jiayang Yang, Chunhui Zhao | 2026年1月29日 | https://zenodo.org/records/18158360(20260725暂未公开) |
+| [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) | 通过提示工程实现自适应 LLM 的锂电池管理 | **arXiv 预印本** (arXiv:2512.16453, v2) <br>  | Jiayang Yang, Chunhui Zhao, Martin Guay, Zhixing Cao | 2025年12月提交，2026年1月修订 | https://zenodo.org/records/18158360(20260725暂未公开) https://data.mendeley.com/datasets/nsc7hnsg4s/2 https://data.matr.io/1/projects/5c48dd2bc625d700019f3204 |
+| [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/ee/article/15/10/4083/767199/Real-time-personalized-health-status-prediction-of) | 利用深度迁移学习实现锂电池实时个性化健康状态预测 | *Energy & Environmental Science* | Guijun Ma, Songpei Xu, Benben Jiang, Cheng Cheng, Xin Yang, Yue Shen, Tao Yang, Yunhui Huang, Han Ding, Ye Yuan | 2022年7月30日 |[Mendeley (nsc7hnsg4s/2)](https://data.mendeley.com/datasets/nsc7hnsg4s/2) <br> [Zenodo (10.5281/zenodo.6827566)](https://doi.org/10.5281/zenodo.6827566) |
+| [LiPM Foundation Model for Lithium-Ion Battery Analysis](https://dl.acm.org/doi/10.1145/3711896.3737027) | 面向锂离子电池分析的基础模型（Foundation Model） | *Proceedings of the 31st ACM SIGKDD Conference (KDD '25)* | Juren Li, Yang Yang, Hanchen Su, Jiayu Liu, Youmin Chen, Jianfeng Zhang, Lujia Pan | 2025年8月3日 | https://github.com/JuRenGithub/LiPM |
+
+# 锂离子电池论文中的评价方法
+
+| object | method | paper |
+| --- | --- | --- |
+| Anomaly, bulging and internal short-circuit (ISC) detection | Precision（精确率）和 Recall（召回率） | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Remaining range, State of Health (SOH) and Remaining Useful Life (RUL) prediction | MAE（Mean Absolute Error，平均绝对误差）和 MSE（Mean Squared Error，均方误差） | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Real-world diagnostic recommendation effectiveness | Adoption Rate（采用率）：$1-\frac{\text{non-adopted recommendations}}{\text{total recommendations}}$ | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Contribution of individual framework components | Ablation study（消融实验）：完整模型分别与移除 LLiM、移除知识库以及仅使用 LLM 的变体比较 | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| State of Charge (SOC) prediction | RMSE（Root Mean Squared Error，均方根误差）和 MAE；预测第 100 分钟的系统平均 SOC，并与真实值比较 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Factual consistency of generated battery reports | FactScore：独立评判 LLM 按属性给出 1（高度一致）、0.5（部分一致）或 0（低一致），再对全部属性得分取平均 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Statistical significance of report-quality improvement | 均值与 95% CI（置信区间）；使用单侧配对 Wilcoxon 检验计算 $p$ 值 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Abnormality detection in LIB operation monitoring | Accuracy（Acc，准确率）和 False Alarm Rate（FAR，误报率）；预测结果与专家标注的 ground truth 比较 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Personalized capacity prediction | RMSE（单位：mAh）、$R^2$（决定系数）和 MAPE（Mean Absolute Percentage Error，平均绝对百分比误差） | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+| Remaining Useful Life (RUL) prediction | RMSE（单位：cycles）、$R^2$ 和 MAPE | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+| Robustness to the number of input and sampled cycles | 用不同输入循环数与采样循环数组合构成敏感性实验，并以 RMSE 矩阵/热图比较预测误差 | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+| RUL, SOH, discharge-capacity change ($\Delta Q_D$), charge-capacity change ($\Delta Q_C$) and internal resistance (IR) prediction | MSE 和 MAE；在多个下游回归任务上分别报告，以衡量预测值与真实值的偏差 | [LiPM Foundation Model for Lithium-Ion Battery Analysis](https://dl.acm.org/doi/10.1145/3711896.3737027) |
+
