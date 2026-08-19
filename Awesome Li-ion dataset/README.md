@@ -1,0 +1,302 @@
+# Awesome Lithium-Ion Battery Resources
+## 目录
+
+- [收录规则](#收录规则)
+- [物理模型与仿真代码](#物理模型与仿真代码)
+- [参数辨识、状态估计与数字孪生](#参数辨识状态估计与数字孪生)
+- [机器学习与基础模型](#机器学习与基础模型)
+- [电化学数据分析](#电化学数据分析)
+- [实验设备、文件解析与接口代码](#实验设备文件解析与接口代码)
+- [微观结构、成像与扫描数据](#微观结构成像与扫描数据)
+- [图像重建、分割与微结构分析](#图像重建分割与微结构分析)
+- [安全、热失控与事故数据](#安全热失控与事故数据)
+- [BMS、固件、开源硬件与通信](#bms固件开源硬件与通信)
+- [材料数据库、知识图谱与 API](#材料数据库知识图谱与-api)
+- [数据标准、本体与电池护照](#数据标准本体与电池护照)
+- [制造、成本、回收与生命周期](#制造成本回收与生命周期)
+- [测试标准与法规入口](#测试标准与法规入口)
+- [推荐的仓库结构](#推荐的仓库结构)
+- [贡献模板](#贡献模板)
+
+## 收录规则
+
+- 优先收录可公开访问的原始数据、官方代码仓库、项目主页、标准机构页面和论文落地页。
+- `开放` 表示无需购买即可访问；`需注册` 表示免费账户或 API key；`商业` 表示可能需要许可证或付费。
+- GitHub 上的代码并不自动等于可自由再分发；使用前必须检查仓库中的 `LICENSE`。
+- 数据应同时记录许可证、版本、DOI、化学体系、规格、测试条件、文件格式和引用方式。
+- 本目录是持续维护的索引，不声称在任何时间点穷尽整个互联网。失效链接、重复记录和许可证变化应通过 Issue/PR 更新。
+
+
+## 物理模型与仿真代码
+
+### 电芯电化学、热与老化模型
+
+| 名称 | 链接 | 语言/平台 | 模型与用途 | 开放性 |
+| --- | --- | --- | --- | --- |
+| PyBaMM | [GitHub](https://github.com/pybamm-team/PyBaMM) · [Docs](https://docs.pybamm.org/) | Python | SPM、SPMe、DFN、电热耦合、降解与参数集 | BSD-3-Clause |
+| liionpack | [GitHub](https://github.com/pybamm-team/liionpack) | Python | 基于 PyBaMM 的串并联电池包仿真 | 开源 |
+| PyBOP | [GitHub](https://github.com/pybop-team/PyBOP) | Python | 物理模型参数辨识、优化与不确定性分析 | 开源 |
+| SLIDE | [GitHub](https://github.com/Battery-Intelligence-Lab/SLIDE) | C++ | 高速电化学、热、老化及电池包仿真 | 开源 |
+| PETLION | [GitHub](https://github.com/MarcBerliner/PETLION.jl) | Julia | 毫秒级多孔电极模型 | 开源 |
+| LIONSIMBA | [GitHub](https://github.com/lionsimbatoolbox/LIONSIMBA) | MATLAB | P2D/DFN 电化学模型 | 开源代码；需 MATLAB |
+| MPET | [GitHub](https://github.com/TRI-AMDD/mpet) | Python | 多相多孔电极理论 | 开源 |
+| MPET Network | [GitHub](https://github.com/Ombrini/MPET_Network) | Python | MPET 网络及电芯级扩展 | 开源 |
+| BattMo | [GitHub](https://github.com/BattMoTeam/BattMo) · [Docs](https://battmoteam.github.io/BattMo/) | MATLAB | 1D/2D/3D 连续介质电化学—热耦合 | GPL-3.0；需 MATLAB |
+| DandeLiion | [Web solver](https://www.dandeliion.com/) | Web/C++ 后端 | 快速 Newman/DFN 与 3D 热耦合模型 | 免费 Web 服务；商业使用需核对 |
+| Dualfoil | [Project](https://www.cchem.berkeley.edu/jsngrp/fortran.html) | Fortran | 经典 Doyle–Fuller–Newman 模型代码 | 旧版研究代码 |
+| Thevenin | [GitHub](https://github.com/NREL/thevenin) | Python | 等效电路与热模型 | 开源 |
+| BLAST-Lite | [GitHub](https://github.com/NREL/BLAST-Lite) | Python | 经验老化、寿命与应用工况仿真 | 开源 |
+| COBRAPRO | [GitHub](https://github.com/COBRAPROsimulator/COBRAPRO) | MATLAB | 电化学模型与参数优化 | 开源代码；需 MATLAB |
+| batP2dFoam | [GitHub](https://github.com/redyxg/batP2dFoam) | C++/OpenFOAM | 基于 OpenFOAM 的 P2D 电池仿真 | 开源 |
+| Simscape Battery Library | [GitHub](https://github.com/WDWidanage/Simscape-Battery-Library) | MATLAB/Simscape | 电芯及电池包多域模型 | 代码公开；需商业软件 |
+| CellModels | [GitHub](https://github.com/mjlacey/cellmodels) | Julia | 电芯性能与电池包模型 | 开源 |
+| ECStoolbox | [BMS Algorithms](http://mocha-java.uccs.edu/BMS1/index.html) | MATLAB | ECM、热模型、Kalman 滤波教学实现 | 免费下载；需 MATLAB |
+| Battery Design Studio examples | [Faraday workbook](https://www.faraday.ac.uk/fi-cell-modelling-workbook/) | Excel | 电芯设计、性能与平衡教学工作簿 | 免费下载 |
+| OpenFOAM | [Project](https://openfoam.org/) | C++ | 冷却、流体、传热和热失控 CFD 的通用基础 | GPL |
+
+### 电池包、系统与成本模型
+
+| 名称 | 链接 | 语言/平台 | 用途 | 开放性 |
+| --- | --- | --- | --- | --- |
+| BatPaC | [Argonne](https://www.anl.gov/partnerships/batpac-battery-manufacturing-cost-estimation) | Excel | 电芯/电池包设计、性能与制造成本 | 免费下载；需查看许可 |
+| Back of the Battery | [GitHub](https://github.com/ndrewwang/BotB) | Python | 电芯选择、电池包性能与成本 | 开源 |
+| Cell Simulator | [Paper/tool](https://pubs.rsc.org/en/content/articlelanding/2020/mh/d0mh00067a) | Excel | 电芯与电池包设计权衡 | 附件开放性依论文页 |
+| ISEA Cell and Pack Database | [GitLab](https://git.rwth-aachen.de/isea/isea-cell-and-pack-database) | MATLAB | 电芯参数、包级性能与选型 | 开源/需核对数据许可 |
+| oemof.solph | [GitHub](https://github.com/oemof/oemof-solph) | Python | 含储能的能源系统优化 | 开源；非电池专用 |
+| PyPSA | [GitHub](https://github.com/PyPSA/PyPSA) | Python | 电力系统与储能规划/运行 | MIT；非电池专用 |
+
+## 参数辨识、状态估计与数字孪生
+
+| 名称 | 链接 | 语言 | 主要能力 | 备注 |
+| --- | --- | --- | --- | --- |
+| AutoSOH / moirae | [GitHub](https://github.com/ROVI-org/auto-soh) | Python | 在线 ECM 参数、SOC/SOH 状态估计与 Kalman 滤波 | 开源 |
+| BatEst | [GitHub](https://github.com/Battery-Intelligence-Lab/BatEst) | MATLAB | 低阶模型仿真与参数估计 | 开源代码；需 MATLAB |
+| PyBOP | [GitHub](https://github.com/pybop-team/PyBOP) | Python | 基于 PyBaMM 的参数优化、似然与辨识 | 开源 |
+| impedance.py | [GitHub](https://github.com/ECSHackWeek/impedance.py) | Python | EIS 等效电路拟合与验证 | MIT |
+| EISFitting | [GitHub](https://github.com/Samuel-Buteau/EISFitting) | Python | EIS 等效电路参数拟合 | 开源 |
+| Thevenin | [GitHub](https://github.com/NREL/thevenin) | Python | ECM/热模型，可用于估计器和数字孪生 | 开源 |
+| MathWorks battery modeling examples | [GitHub](https://github.com/mathworks/battery-modeling-solutions-with-simscape-and-measured-data) | MATLAB/Simulink | ECM、参数估计、包模型、平衡与 RUL 示例 | 代码公开；需商业工具箱 |
+
+## 机器学习与基础模型
+
+| 名称 | 链接 | 语言 | 任务 | 备注 |
+| --- | --- | --- | --- | --- |
+| BatteryML | [GitHub](https://github.com/microsoft/BatteryML) | Python/PyTorch | 数据预处理、特征工程、SOH/RUL/寿命基准 | MIT |
+| BatteryLife | [GitHub](https://github.com/Ruifeng-Tan/BatteryLife) | Python | 多数据集寿命预测与 18 类基准模型 | 开放数据与代码 |
+| BEEP | [GitHub](https://github.com/TRI-AMDD/beep) | Python | 循环数据结构化、特征提取、早期寿命预测 | BSD-3-Clause |
+| LiPM | [GitHub](https://github.com/JuRenGithub/LiPM) | Python | 电池时序基础模型，下游 SOH/RUL/容量/内阻任务 | 以仓库许可为准 |
+| MambaLithium | [GitHub](https://github.com/zshicode/MambaLithium) | Python/PyTorch | SOC、SOH、RUL 的状态空间模型 | 研究代码 |
+| Battery RUL Estimation | [GitHub](https://github.com/MichaelBosello/battery-rul-estimation) | Python/Keras | 基于深度 LSTM 的 RUL 示例 | 研究代码 |
+| NASA Prognostics Algorithms Library | [GitHub](https://github.com/nasa/PrognosticsAlgorithmLibrary) | MATLAB | 通用 PHM/RUL 算法，可用于电池 | NASA 开源 |
+| NASA Prognostics Models | [GitHub](https://github.com/nasa/prog_models) | Python | 状态传播、事件与剩余寿命预测框架 | NASA 开源 |
+
+> 建议：对 AI 仓库同时记录训练/测试电芯是否泄漏、跨电芯与跨化学体系划分、输入循环数、随机种子、评价指标和权重许可证，避免只收录“能运行的 notebook”。
+
+## 电化学数据分析
+
+| 名称 | 链接 | 语言 | 用途 | 备注 |
+| --- | --- | --- | --- | --- |
+| PyProBE | [GitHub](https://github.com/ImperialCollegeLondon/PyProBE) | Python | 电池测试数据处理、容量/能量/增量容量等分析 | 开源 |
+| cellpy | [GitHub](https://github.com/jepegit/cellpy) | Python | 循环数据读取、清洗、汇总和绘图 | MIT |
+| Ampworks | [GitHub](https://github.com/NREL/ampworks) | Python | 测试数据指标提取 | 开源 |
+| Battery Data Toolkit | [GitHub](https://github.com/ROVI-org/battery-data-toolkit) | Python | 标准化电池数据与特征提取 | 开源 |
+| DiffCapAnalyzer | [GitHub](https://github.com/nicolet5/DiffCapAnalyzer) | Python/Dash | dQ/dV 清洗、峰值定量与交互可视化 | 开源 |
+| impedance.py | [GitHub](https://github.com/ECSHackWeek/impedance.py) | Python | Nyquist/Bode、ECM 拟合与验证 | MIT |
+| pyDRTtools | [GitHub](https://github.com/ciuccislab/pyDRTtools) | Python | 弛豫时间分布（DRT）分析与界面 | 开源 |
+| DRTtools | [GitHub](https://github.com/ciuccislab/DRTtools) | MATLAB | DRT 分析 | 开源代码；需 MATLAB |
+| hybrid-drt | [GitHub](https://github.com/jdhuang-csm/hybrid-drt) | Python | DRT-DOP 联合模型 | 开源 |
+| ALawa | [Project](https://www.hnei.hawaii.edu/alawa/) | MATLAB | 退化模式分析（DVA/ICA） | 免费下载；需 MATLAB |
+| ixdat | [GitHub](https://github.com/ixdat/ixdat) | Python | 电化学及联用实验数据模型与分析 | MIT |
+| echemdb | [GitHub](https://github.com/echemdb/echemdb) | Python/CSV | FAIR 电化学数据发布与处理 | 开源 |
+
+## 实验设备、文件解析与接口代码
+
+| 名称 | 链接 | 语言 | 设备/格式 | 功能 |
+| --- | --- | --- | --- | --- |
+| BattETL | [GitHub](https://github.com/BattGenie/battetl) | Python | Arbin、Maccor | 提取、转换并写入数据库 |
+| Battery Data Format | [GitHub](https://github.com/battery-data-alliance/battery-data-format) | Python/Parquet | 通用；含 Neware 适配 | 标准数据结构、转换与验证 |
+| NewareNDA | [GitHub](https://github.com/Solid-Energy-Systems/NewareNDA) | Python | Neware `.nda/.ndax` | 读取与转换 |
+| yadg | [GitHub](https://github.com/dgbowl/yadg) | Python | 多类电化学/实验文件 | 自动解析为统一数据结构 |
+| galvani | [GitHub](https://github.com/echemdata/galvani) | Python | BioLogic、Arbin | 二进制/导出文件解析 |
+| eclabfiles | [GitHub](https://github.com/vetschn/eclabfiles) | Python | BioLogic EC-Lab | `.mpr` 等文件解析 |
+| Aurora BioLogic | [GitHub](https://github.com/EmpaEconversion/aurora-biologic) | Python | BioLogic | 控制通道、加载协议、启停实验 |
+| Aurora Cycler Manager | [GitHub](https://github.com/EmpaEconversion/aurora-cycler-manager) | Python | 多电池测试设备 | 自动化调度、数据库和监控 |
+| PyGamry | [GitHub](https://github.com/jdhuang-csm/pygamry) | Python | Gamry | 仪器控制与数据采集 |
+| PyMacNet | [GitHub](https://github.com/battery-data-alliance/pymacnet) | Python | Maccor | 网络接口与数据抓取 |
+| PyCTIArbin | [GitHub](https://github.com/battery-data-alliance/pyctiarbin) | Python | Arbin | CTI 自动化接口 |
+| galv | [GitHub organization](https://github.com/galv-team) | Python | 多类 cycler | 采集、同步、数据管理与 API |
+| Voltaiq Data Format | [GitHub](https://github.com/SubwayLabs/VoltaiqDataFormat) | Python | 通用 | Voltaiq 开放数据格式工具 |
+| Universal Battery Database | [GitHub](https://github.com/Samuel-Buteau/universal-battery-database) | Python | 通用 | 电池测试数据库模式与处理 |
+| DATTES | [GitLab](https://gitlab.com/dattes/dattes/) | MATLAB | 多类 cycler | 数据处理、评价与可视化 |
+| AmpLabs | [GitHub](https://github.com/battery-data-alliance/amplabs) | Python/MATLAB | 实验室数据 | 数据管理与分析 |
+| datalab | [Docs](https://docs.datalab-org.io/) | Python/Web | 通用实验室 | ELN/LIMS、样品和实验数据管理 |
+| PyVISA | [GitHub](https://github.com/pyvisa/pyvisa) | Python | VISA/SCPI 仪器 | 通用电源、负载和测量设备接口 |
+| python-can | [GitHub](https://github.com/hardbyte/python-can) | Python | CAN | BMS/CAN 总线读写与记录 |
+| cantools | [GitHub](https://github.com/cantools/cantools) | Python | CAN/DBC | DBC 编解码、日志转换与绘图 |
+| pymodbus | [GitHub](https://github.com/pymodbus-dev/pymodbus) | Python | Modbus | BMS、充电器、逆变器接口基础库 |
+| Eclipse Mosquitto | [Project](https://mosquitto.org/) | C/MQTT | MQTT | BMS/实验室遥测消息代理 |
+
+## 微观结构、成像与扫描数据
+
+| 名称 | 链接 | 模态/内容 | 用途 | 访问 |
+| --- | --- | --- | --- | --- |
+| Battery Imaging Library | [Portal](https://batteryimaginglibrary.com/) | SEM、EDS、EBSD、XCT、XANES-CT 等 | 跨尺度电池成像数据检索与下载 | 开放 |
+| NREL Battery Microstructures Library | [Portal](https://www.nrel.gov/transportation/microstructure) | NMC/石墨电极灰度与分割 3D X-ray CT | 孔隙率、曲折度、微结构模型 | 开放 |
+| Glimpse CT Dataset | [Figshare](https://plus.figshare.com/articles/dataset/A_dataset_of_over_one_thousand_computed_tomography_scans_of_battery_cells/25330501) | 超过一千个电芯 CT 扫描 | 电芯缺陷、结构和质量检测 | 开放/依记录许可 |
+| Glimpse Viewer | [Web app](https://app.glimp.se/) | 电芯 X-ray CT 在线交互 | 快速浏览与演示 | 免费 Web |
+| Battery Failure Databank Imaging | [NREL/NLR](https://www.nrel.gov/transportation/battery-failure) | 高速 X-ray radiography + 热失控数据 | 失效机理与安全基准 | 开放 |
+
+## 图像重建、分割与微结构分析
+
+### CT/断层重建与三维可视化
+
+| 名称 | 链接 | 语言/平台 | 主要能力 | 开放性 |
+| --- | --- | --- | --- | --- |
+| TomoPy | [GitHub](https://github.com/tomopy/tomopy) | Python | 投影预处理、相位恢复、伪影去除、CT 重建 | BSD-3-Clause |
+| ASTRA Toolbox | [Project](https://astra-toolbox.com/) | Python/MATLAB/CUDA | 高性能 2D/3D 投影和迭代重建 | GPL |
+| TIGRE | [GitHub](https://github.com/CERN/TIGRE) | Python/MATLAB/CUDA | GPU 迭代 CT/CBCT 重建 | BSD |
+| Core Imaging Library (CIL) | [GitHub](https://github.com/TomographicImaging/CIL) | Python | CT 数据读取、优化和重建流水线 | Apache-2.0 |
+| nDTomo | [GitHub](https://github.com/antonyvam/nDTomo) | Python | 高维 X-ray 谱学、化学成像与断层 | 开源 |
+| tomosipo | [GitHub](https://github.com/ahendriksen/tomosipo) | Python/ASTRA | 可微分断层算子与重建 | 开源 |
+| Fiji/ImageJ | [Project](https://imagej.net/software/fiji/) | Java/GUI | 图像预处理、配准、分割与 3D 插件生态 | GPL |
+| napari | [GitHub](https://github.com/napari/napari) | Python/GUI | n 维图像浏览、标注和插件 | BSD |
+| 3D Slicer | [Project](https://www.slicer.org/) | C++/Python/GUI | 3D 分割、配准与可视化 | BSD-style |
+| ParaView | [Project](https://www.paraview.org/) | C++/Python/GUI | 大规模 3D 场和网格可视化 | BSD |
+| tomviz | [GitHub](https://github.com/OpenChemistry/tomviz) | C++/Python/GUI | 材料断层重建与可视化 | BSD |
+
+### 孔结构、分割和有效性质
+
+| 名称 | 链接 | 语言 | 主要能力 | 开放性 |
+| --- | --- | --- | --- | --- |
+| TauFactor | [GitHub](https://github.com/tldr-group/taufactor) | Python/GPU | 相体积分数、曲折度和有效传输性质 | 开源 |
+| PoreSpy | [GitHub](https://github.com/PMEAL/porespy) | Python | 多孔介质图像生成、过滤、网络提取与指标 | MIT |
+| OpenPNM | [GitHub](https://github.com/PMEAL/OpenPNM) | Python | 孔网络建模、传输与反应模拟 | MIT |
+| MATBOX | [GitHub](https://github.com/NREL/MATBOX_Microstructure_analysis_toolbox) | MATLAB | 微结构分割、表征、网格化和生成 | 开源代码；需 MATLAB |
+| scikit-image | [GitHub](https://github.com/scikit-image/scikit-image) | Python | 通用去噪、阈值、形态学和分割 | BSD |
+| ilastik | [Project](https://www.ilastik.org/) | GUI/Python | 交互式机器学习像素/对象分类 | GPL |
+| Cellpose | [GitHub](https://github.com/MouseLand/cellpose) | Python/PyTorch | 通用深度学习分割，可迁移到颗粒/孔隙 | BSD；非电池专用 |
+
+### SEM/TEM/EDS/EBSD/衍射与谱学
+
+| 名称 | 链接 | 语言 | 主要能力 | 开放性 |
+| --- | --- | --- | --- | --- |
+| HyperSpy | [GitHub](https://github.com/hyperspy/hyperspy) | Python | 多维显微与谱学数据、EDS/EELS | GPL |
+| pyxem | [GitHub](https://github.com/pyxem/pyxem) | Python | 4D-STEM、电子衍射、取向和应变分析 | GPL-3.0 |
+| LiberTEM | [GitHub](https://github.com/LiberTEM/LiberTEM) | Python | 大规模像素化 STEM 分布式分析 | GPL |
+| py4DSTEM | [GitHub](https://github.com/py4dstem/py4DSTEM) | Python | 4D-STEM 数据处理与分析 | GPL |
+| Atomap | [GitHub](https://github.com/atomap-dev/atomap) | Python | 原子分辨 STEM 晶格与原子柱定量 | GPL-3.0 |
+| AtomAI | [GitHub](https://github.com/pycroscopy/atomai) | Python/PyTorch | 显微图像和谱学的深度学习分析 | MIT |
+| pyFAI | [GitHub](https://github.com/silx-kit/pyFAI) | Python | 2D X-ray 衍射方位积分 | MIT |
+| GSAS-II | [Project](https://advancedphotonsource.github.io/GSAS-II-tutorials/) | Python/GUI | 粉末/单晶衍射分析和 Rietveld 精修 | 开放 |
+| pymatgen-analysis-diffraction | [Docs](https://pymatgen.org/pymatgen.analysis.diffraction.html) | Python | XRD/中子/电子衍射图样计算 | MIT |
+
+## 安全、热失控与事故数据
+
+| 名称 | 链接 | 数据内容 | 尺度 | 访问说明 |
+| --- | --- | --- | --- | --- |
+| Battery Failure Databank | [NREL/NLR](https://www.nrel.gov/transportation/battery-failure) | 针刺、加热、内短路；热量、抛射质量、高速 X-ray | 电芯 | 开放 |
+| Sandia Energy Storage Safety R&D Repository | [Repository](https://www.sandia.gov/energystoragesafety/rd-data-repository/) | ARC、老化后安全、热失控和表征原始数据 | 电芯/系统 | 开放 |
+| EPRI BESS Failure Incident Database | [Database](https://storagewiki.epri.com/index.php/BESS_Failure_Event_Database) | 全球储能系统事故、化学体系、规模、场景和来源 | 系统 | 开放，提供 CSV |
+| UL FSRI UL 9540A experimental data | [Zenodo](https://zenodo.org/records/7244850) | 电芯与集装箱式 BESS 热失控、热释放和气体测量 | 电芯/安装级 | 开放 |
+| UL FSRI Materials and Products Database | [Database](https://materials.fsri.org/) | 火灾材料性质、点火和燃烧测试 | 材料/产品 | 免费 Web |
+| FAA Lithium Battery Incidents | [Database](https://www.faa.gov/hazmat/resources/lithium_batteries/incidents) | 航空运输中冒烟、起火和极端发热事件 | 事故 | 开放、持续更新 |
+| CPSC e-bike battery testing report | [PDF](https://www.cpsc.gov/s3fs-public/CPSC-Staff-Statement-on-e-Bike-Battery-Testing-and-Exponent-Report.pdf) | 电动自行车电池包测试与安全表现 | 电池包 | 开放报告 |
+| Tunnel EV fire dataset | [Data article](https://www.sciencedirect.com/science/article/pii/S2352340922010423) | 隧道环境中的电动汽车火灾实验 | 车辆 | 依文章附件许可 |
+| Full-scale BESS fire test dataset | [Data article](https://www.sciencedirect.com/science/article/pii/S2352340922009167) | 全尺度储能系统火灾测量 | 系统 | 依文章附件许可 |
+| Thermal runaway in air and oil | [Data article](https://www.sciencedirect.com/science/article/pii/S2352340919307334) | 不同环境下的热失控实验 | 电芯 | 依文章附件许可 |
+| Battery safety data on Battery Archive | [Portal](https://www.batteryarchive.org/) | 多来源机械诱发热失控及循环数据 | 电芯 | 开放/依条目许可 |
+
+> 安全数据使用提示：事故数据库不能直接替代受控实验；比较前应统一 SOC、SOH、化学体系、容量、触发方式、环境、量热边界、是否计入抛射物和采样频率。
+
+## BMS、固件、开源硬件与通信
+
+| 名称 | 链接 | 平台/语言 | 范围 | 开放性/状态 |
+| --- | --- | --- | --- | --- |
+| foxBMS 2 | [GitHub](https://github.com/foxBMS/foxbms-2) · [Docs](https://docs.foxbms.org/) | STM32/C/Python | 模块化高压 BMS，硬件、固件、测试和工具链 | 软件 BSD-3-Clause；硬件/文档 CC-BY-4.0 |
+| Libre Solar BMS Firmware | [GitHub](https://github.com/LibreSolar/bms-firmware) | Zephyr RTOS/C | bq769x0/bq769x2/ISL94202 BMS 固件 | Apache-2.0 |
+| Libre Solar BMS C1 | [GitHub](https://github.com/LibreSolar/bms-c1) | KiCad | 16S/100A 开源 BMS 硬件 | 开放硬件 |
+| Libre Solar BMS 8S50-IC | [GitHub](https://github.com/LibreSolar/bms-8s50-ic) | KiCad | 12–24 V 集成式 BMS | 开放硬件 |
+| ENNOID-BMS | [GitHub](https://github.com/EnnoidMe/ENNOID-BMS) | STM32/C/KiCad | 主从式高压 BMS、CAN、被动均衡 | 开源；项目较旧 |
+| ENNOID-BMS Tool | [GitHub](https://github.com/EnnoidMe/ENNOID-BMS-Tool) | C++/Qt | 参数配置、监控和固件升级 | 开源 |
+| diyBMS v4 | [Hardware](https://github.com/stuartpittaway/diyBMSv4) · [Firmware](https://github.com/stuartpittaway/diyBMSv4Code) | ESP/AVR/C++ | 模块化 DIY 电池监控与均衡 | 开源；自行承担安全责任 |
+| SimpBMS | [GitHub](https://github.com/Tom-evnut/SimpBMS) | Arduino/C++ | 复用 Tesla 电池模块监控板的 BMS 控制 | 社区项目 |
+| dbus-serialbattery | [GitHub](https://github.com/Louisvdw/dbus-serialbattery) | Python | 多品牌串口 BMS 接入 Victron VenusOS | 开源 |
+| bms-to-inverter | [GitHub](https://github.com/ai-republic/bms-to-inverter) | Java | UART/RS485/Modbus/CAN 的 BMS—逆变器协议桥 | 开源 |
+| OpenDTU-OnBattery | [GitHub](https://github.com/hoylabs/OpenDTU-OnBattery) | ESP32/C++ | BMS、逆变器、充电器、MQTT 集成 | 开源 |
+| python-can | [GitHub](https://github.com/hardbyte/python-can) | Python | CAN 总线接入、记录和测试 | 开源基础库 |
+| cantools | [GitHub](https://github.com/cantools/cantools) | Python | DBC、CAN 编解码和日志分析 | MIT |
+| SavvyCAN | [GitHub](https://github.com/collin80/SavvyCAN) | C++/Qt | CAN 抓包、DBC、回放和逆向分析 | MIT |
+
+> 警告：开源 BMS 代码不能替代电气隔离、接触器失效分析、ASIL/功能安全、EMC、过流保护、熔断器、热设计和认证测试。不要将研究原型直接用于道路车辆或高压储能系统。
+
+## 材料数据库、知识图谱与 API
+
+| 名称 | 链接 | 接口 | 电池相关内容 | 访问说明 |
+| --- | --- | --- | --- | --- |
+| Materials Project Battery Explorer | [Explorer documentation](https://docs.materialsproject.org/apps/explorer-apps/battery-explorer) | Web | 插层电极、电压、容量、稳定性 | 免费账户 |
+| Materials Project API | [Docs](https://docs.materialsproject.org/downloading-data/using-the-api/getting-started) · [GitHub](https://github.com/materialsproject/api) | REST/Python | insertion electrodes、电解液分子、结构与热力学 | API key/依条款 |
+| pymatgen | [GitHub](https://github.com/materialsproject/pymatgen) | Python | 相图、扩散、界面、结构与电极分析 | MIT |
+| OQMD | [API](https://www.oqmd.org/api/) | REST/OPTIMADE | 开放量子材料结构与热力学数据 | CC-BY-4.0，无需凭据 |
+| NOMAD | [Portal](https://nomad-lab.eu/) · [API](https://nomad-lab.eu/prod/v1/api/v1/extensions/docs) | REST/OPTIMADE | 计算与实验材料数据、工作流和原始文件 | 开放/账户功能混合 |
+| OPTIMADE | [Specification](https://www.optimade.org/specification/latest/) · [Providers](https://www.optimade.org/providers-dashboard/) | 标准 REST API | 跨 Materials Project、OQMD、NOMAD 等检索结构 | 开放标准 |
+| AFLOW | [API](https://aflow.org/API/aflux/) | REST/AFLUX | 计算材料性质与晶体结构 | 依 AFLOW 条款 |
+| Crystallography Open Database | [Portal](https://www.crystallography.net/cod/) | Web/SQL/OPTIMADE | 实验晶体结构 CIF | 开放 |
+| Materials Cloud | [Portal](https://www.materialscloud.org/) · [OPTIMADE](https://optimade.materialscloud.org/) | Web/REST | 计算材料数据与可重复工作流 | 开放/依记录许可 |
+| PubChem PUG REST | [Docs](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest) | REST | 电解液溶剂、盐、添加剂的化学与安全信息 | 开放 |
+| TUM Battery Cell Database | [Zenodo](https://zenodo.org/records/10604028) · [Code](https://github.com/TUMFTM/TechnoEconomicCellSelection) | 文件/Python | 商用电芯规格与技术经济选型 | 开放/依记录许可 |
+| About:Energy Voltt | [Cell Library](https://voltt.aboutenergy.io/cell-library) | Web | 商用电芯参数与模型目录 | 免费浏览/商业数据混合 |
+| Batemo Cell Explorer | [Portal](https://www.batemo.com/products/batemo-cell-explorer/) | Web | 商用电芯性能与模型可视化 | 免费浏览/商业模型 |
+| Battery Knowledge Graph | [Portal](https://battery.knowledge-graph.eu/) | Web/Linked Data | 电池术语、项目与关联知识 | 开放入口 |
+
+## 数据标准、本体与电池护照
+
+| 名称 | 链接 | 格式/技术 | 用途 | 开放性 |
+| --- | --- | --- | --- | --- |
+| Battery Data Format (BDF) | [GitHub](https://github.com/battery-data-alliance/battery-data-format) | Parquet/Python | 电池实验数据统一结构与转换 | 开源 |
+| BPX — Battery Parameter eXchange | [Standard](https://bpxstandard.com/) · [GitHub](https://github.com/FaradayInstitution/BPX) | JSON Schema | DFN/SPM 参数、方程和验证数据交换 | 开放标准 |
+| BattINFO | [GitHub](https://github.com/BIG-MAP/BattINFO) | OWL/RDF/JSON-LD/Python | 电芯、材料、测试、数据集语义与验证 | Apache-2.0 |
+| EMMO domain-battery | [GitHub](https://github.com/emmo-repo/domain-battery) | OWL/RDF | 电池领域本体 | CC-BY-4.0 |
+| EMMO domain-electrochemistry | [GitHub](https://github.com/emmo-repo/domain-electrochemistry) | OWL/RDF | 电化学系统、材料、方法和数据本体 | CC-BY-4.0 |
+| Battery Pass Data Model | [GitHub](https://github.com/batterypass/BatteryPassDataModel) | RDF/JSON-LD/JSON Schema/OpenAPI/AAS | 欧盟电池护照字段和交换模型 | CC-BY-4.0；核对版本 |
+| Battery Pass Content Guidance | [Project](https://thebatterypass.eu/resources/) | PDF/指南 | 护照字段、可持续性和供应链要求 | 开放资料 |
+| Frictionless Data | [Specs](https://specs.frictionlessdata.io/) | JSON/CSV | 数据包、表格 schema 与校验 | 开放标准；通用 |
+| RO-Crate | [Specification](https://www.researchobject.org/ro-crate/) | JSON-LD | 数据、代码、论文与来源关系打包 | 开放标准；通用 |
+
+## 制造、成本、回收与生命周期
+
+| 名称 | 链接 | 类型 | 用途 | 访问说明 |
+| --- | --- | --- | --- | --- |
+| BatPaC | [Argonne](https://www.anl.gov/partnerships/batpac-battery-manufacturing-cost-estimation) | Excel 模型 | 电芯/电池包设计和制造成本 | 免费下载/依许可 |
+| EverBatt Lite | [Argonne](https://everbatt.amd.anl.gov/) | Web 模型 | 闭环回收的成本、能源与排放 | 免费 Web；功能为 EverBatt 子集 |
+| GREET | [Argonne](https://greet.anl.gov/) | 生命周期模型 | 材料、车辆、燃料与电池生命周期分析 | 免费注册/依许可 |
+| ReCell Center | [Portal](https://recellcenter.org/) | 研究集合 | 锂电池直接回收、过程与模型 | 开放资料/数据分散 |
+| NREL BLAST-Lite | [GitHub](https://github.com/NREL/BLAST-Lite) | Python | 不同应用工况下的退化与寿命 | 开源 |
+| openLCA | [Project](https://www.openlca.org/) | Java/GUI | 生命周期评价建模 | 软件开放；数据库许可各异 |
+| Brightway | [GitHub](https://github.com/brightway-lca/brightway2) | Python | 可编程 LCA 与情景分析 | BSD；数据库另行授权 |
+| ecoinvent | [Database](https://ecoinvent.org/) | LCI 数据库 | 电池材料、能源、运输和回收背景数据 | 商业/学术许可 |
+| GREET Python Interface | [GitHub search](https://github.com/search?q=GREET+lifecycle&type=repositories) | Python/第三方 | GREET 自动化与结果处理的社区实现 | 非官方，逐项核验 |
+| Argonne CAMP Facility | [Portal](https://www.anl.gov/cse/cell-analysis-modeling-and-prototyping-camp-facility) | 制造与表征资源 | 标准电极、电芯制造和公开研究入口 | 项目资料 |
+
+## 测试标准与法规入口
+
+标准正文经常需要购买；下表链接到发布机构或法规原文，不提供未经授权的副本。
+
+| 标准/法规 | 官方入口 | 范围 | 访问 |
+| --- | --- | --- | --- |
+| UN Manual of Tests and Criteria, 38.3 | [UNECE](https://unece.org/transport/dangerous-goods/manual-tests-and-criteria) | 锂电池运输 T.1–T.8 | 官方 PDF 通常开放 |
+| IATA Lithium Battery Guidance | [IATA](https://www.iata.org/en/programs/cargo/dgr/lithium-batteries/) | 航空运输、包装和申报 | 指南开放/规则混合 |
+| IEC 62133-2 | [IEC](https://webstore.iec.ch/en/publication/32662) | 便携式密封锂电芯/电池安全 | 标准付费 |
+| IEC 62619 | [IEC](https://webstore.iec.ch/en/publication/64073) | 工业二次锂电芯/电池安全 | 标准付费 |
+| IEC 62660 series | [IEC search](https://webstore.iec.ch/searchform&q=IEC%2062660) | 电动道路车辆锂离子电芯性能、可靠性和安全 | 标准付费 |
+| UL 1642 | [UL Standards](https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1642) | 锂电芯安全 | 标准付费 |
+| UL 1973 | [UL Standards](https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1973) | 固定式/车辆辅助电池 | 标准付费 |
+| UL 2580 | [UL Standards](https://www.shopulstandards.com/ProductDetail.aspx?productId=UL2580) | 电动车电池 | 标准付费 |
+| UL 9540A | [UL Solutions](https://www.ul.com/services/ul-9540a-test-method) | 储能系统热失控传播测试方法 | 介绍开放/标准依授权 |
+| SAE J2464 | [SAE](https://www.sae.org/standards/content/j2464_202111/) | 电动车储能系统滥用测试 | 标准付费 |
+| ISO 12405 series | [ISO search](https://www.iso.org/search.html?q=ISO%2012405) | 电动道路车辆锂离子电池包/系统测试 | 标准付费 |
+| EU Battery Regulation 2023/1542 | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/1542/oj) | 可持续性、安全、标签、护照与回收 | 法规原文开放 |
+| 中国国家标准全文公开系统 | [SAMR](https://openstd.samr.gov.cn/) | GB/GB/T 电池标准检索 | 部分全文开放 |
+## 致谢
+
+- [pauljgasper/awesome-battery-data](https://github.com/pauljgasper/awesome-battery-data)：本目录的主要结构参考与首批资源线索。
+- 各开源项目维护者、数据作者、标准机构和公共研究资助机构。
