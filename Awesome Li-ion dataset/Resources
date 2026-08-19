@@ -15,8 +15,8 @@
 - [数据标准、本体与电池护照](#数据标准本体与电池护照)
 - [制造、成本、回收与生命周期](#制造成本回收与生命周期)
 - [测试标准与法规入口](#测试标准与法规入口)
-- [推荐的仓库结构](#推荐的仓库结构)
-- [贡献模板](#贡献模板)
+- [锂离子电池论文中的评价方法](#锂离子电池论文中的评价方法)
+- [致谢](#致谢）
 
 ## 收录规则
 
@@ -296,6 +296,23 @@
 | ISO 12405 series | [ISO search](https://www.iso.org/search.html?q=ISO%2012405) | 电动道路车辆锂离子电池包/系统测试 | 标准付费 |
 | EU Battery Regulation 2023/1542 | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/1542/oj) | 可持续性、安全、标签、护照与回收 | 法规原文开放 |
 | 中国国家标准全文公开系统 | [SAMR](https://openstd.samr.gov.cn/) | GB/GB/T 电池标准检索 | 部分全文开放 |
+
+# 锂离子电池论文中的评价方法
+
+| object | method | paper |
+| --- | --- | --- |
+| Anomaly, bulging and internal short-circuit (ISC) detection | Precision（精确率）和 Recall（召回率） | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Remaining range, State of Health (SOH) and Remaining Useful Life (RUL) prediction | MAE（Mean Absolute Error，平均绝对误差）和 MSE（Mean Squared Error，均方误差） | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Real-world diagnostic recommendation effectiveness | Adoption Rate（采用率）：$1-\frac{\text{non-adopted recommendations}}{\text{total recommendations}}$ | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| Contribution of individual framework components | Ablation study（消融实验）：完整模型分别与移除 LLiM、移除知识库以及仅使用 LLM 的变体比较 | [LiBrain: LLM-Powered Li-ion Battery Diagnostics with Time-Series-Aware Retrieval-Augmented Framework for E-bikes](https://ojs.aaai.org/index.php/AAAI/article/view/41439) |
+| State of Charge (SOC) prediction | RMSE（Root Mean Squared Error，均方根误差）和 MAE；预测第 100 分钟的系统平均 SOC，并与真实值比较 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Factual consistency of generated battery reports | FactScore：独立评判 LLM 按属性给出 1（高度一致）、0.5（部分一致）或 0（低一致），再对全部属性得分取平均 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Statistical significance of report-quality improvement | 均值与 95% CI（置信区间）；使用单侧配对 Wilcoxon 检验计算 $p$ 值 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Abnormality detection in LIB operation monitoring | Accuracy（Acc，准确率）和 False Alarm Rate（FAR，误报率）；预测结果与专家标注的 ground truth 比较 | [TimeSeries2Report prompting enables adaptive large language model management of lithium-ion batteries](https://arxiv.org/abs/2512.16453) |
+| Personalized capacity prediction | RMSE（单位：mAh）、$R^2$（决定系数）和 MAPE（Mean Absolute Percentage Error，平均绝对百分比误差） | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+| Remaining Useful Life (RUL) prediction | RMSE（单位：cycles）、$R^2$ 和 MAPE | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+| Robustness to the number of input and sampled cycles | 用不同输入循环数与采样循环数组合构成敏感性实验，并以 RMSE 矩阵/热图比较预测误差 | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
+
 ## 致谢
 
 - [pauljgasper/awesome-battery-data](https://github.com/pauljgasper/awesome-battery-data)：本目录的主要结构参考与首批资源线索。
