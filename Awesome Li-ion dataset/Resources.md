@@ -1,4 +1,5 @@
 # Awesome Lithium-Ion Battery Resources
+
 ## 目录
 
 - [收录规则](#收录规则)
@@ -16,7 +17,7 @@
 - [制造、成本、回收与生命周期](#制造成本回收与生命周期)
 - [测试标准与法规入口](#测试标准与法规入口)
 - [锂离子电池论文中的评价方法](#锂离子电池论文中的评价方法)
-- [致谢](#致谢）
+- [致谢](#致谢)
 
 ## 收录规则
 
@@ -297,7 +298,7 @@
 | EU Battery Regulation 2023/1542 | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/1542/oj) | 可持续性、安全、标签、护照与回收 | 法规原文开放 |
 | 中国国家标准全文公开系统 | [SAMR](https://openstd.samr.gov.cn/) | GB/GB/T 电池标准检索 | 部分全文开放 |
 
-# 锂离子电池论文中的评价方法
+## 锂离子电池论文中的评价方法
 
 | object | method | paper |
 | --- | --- | --- |
@@ -313,7 +314,7 @@
 | Remaining Useful Life (RUL) prediction | RMSE（单位：cycles）、$R^2$ 和 MAPE | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
 | Robustness to the number of input and sampled cycles | 用不同输入循环数与采样循环数组合构成敏感性实验，并以 RMSE 矩阵/热图比较预测误差 | [Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning](https://pubs.rsc.org/en/content/articlelanding/2022/ee/d2ee01676a) |
 
-## 致谢
+##  致谢
 
 - [pauljgasper/awesome-battery-data](https://github.com/pauljgasper/awesome-battery-data)：本目录的主要结构参考与首批资源线索。
 - 各开源项目维护者、数据作者、标准机构和公共研究资助机构。
